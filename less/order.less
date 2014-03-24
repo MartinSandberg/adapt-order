@@ -1,0 +1,154 @@
+.order-component {
+    .order-item {
+        background-color: @primary-color;
+        padding: @item-padding;
+        position:relative;
+        border:@border;
+        margin-bottom:2px;
+    }
+    label{
+        background-color: transparent;
+        line-height: 32px;
+        padding: 0px;
+        float: left;
+        text-align: center;
+        cursor: default;
+        color: @inverted-foreground-color;
+    }
+    .order-item-prefix {
+        width:20%;
+    }
+    .order-item-textbox {
+        padding: 0 5px;
+        width: 54%;
+        float: left;
+        height: 26px;
+    }
+    .order-item-suffix {
+        width:10%;
+    }
+    
+    .button {
+        outline: none;
+        text-decoration: none;
+        padding: @button-padding;
+        color: @button-text-color;
+        background-color: @button-color;
+        display: none;
+        margin-top:8px;
+        
+        &.submit {
+            display: inline-block;
+        }
+    }
+    
+    .order-widget {
+        &.submitted {
+            .button.submit {
+                display: none;
+            }
+            .button.reset {
+                display: inline-block;
+            }
+            .order-item {
+                background-color: @item-disabled-color;
+            }
+        }
+    
+        &.user {
+            .button.model {
+                display: inline-block;
+            }
+            .incorrect {
+                .order-incorrect-icon {
+                    display: block;
+                }
+            }
+            .correct {
+                .order-correct-icon {
+                    display: block;
+                }
+            }
+        }
+        
+        &.model {
+            .button.user {
+                display: inline-block;
+            }
+            .order-select-icon {
+                display: none;
+            }
+            .order-correct-icon {
+                display: block;
+            }
+        }
+        
+        &.disabled {
+            .button.reset {
+                display: none;
+            }
+            .user.correct .button {
+                display: inline-block;
+                visibility: hidden;
+            }
+        }
+        
+        &.correct {
+            .button {
+                visibility: hidden;
+                display: none;
+            }
+        }
+    }
+
+    .order-item-state {
+        background: none;
+        position: absolute;
+        right: (@icon-size/2);
+        width: @icon-size;
+        height: @icon-size;
+        top: 50%;
+        margin-top: -(@icon-size/2);
+        z-index: 0;
+    }
+
+    .order-correct-icon {
+        color: @icon-correct-color;
+        display: none;
+    }
+
+    .order-incorrect-icon {
+        color: @icon-incorrect-color;
+        display: none;
+    }
+    
+    .order-item-reorder {
+        background: none;
+        position: absolute;
+        right: (@icon-size * 2);
+        width: @icon-size * 2;
+        height: @icon-size;
+        top: 50%;
+        margin-top: -(@icon-size/3);
+        z-index: 0;
+    }
+    
+    .order-up-icon {
+       // color: @icon-correct-color;
+       position: relative;
+    }
+
+    .order-down-icon {
+       // color: @icon-incorrect-color;
+       position: relative;
+    }
+}
+    
+.no-touch {
+    .button {
+        &:hover {
+            color: @button-text-hover-color;
+            background-color: @button-hover-color;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "adapt-order",
+  "version": "0.0.1",
+  "description": "A question component that allows the learner to order texts in sequence",
+  "main": "",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martinsandberg/adapt-order.git"
+  },
+  "author": "AdaptLearning",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/martinsandberg/adapt-order/issues"
+  },
+  "devDependencies": {
+    "karma": "~0.9",
+    "karma-mocha": "*",
+    "karma-expect": "*"
+  }
+}

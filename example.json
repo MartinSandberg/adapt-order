@@ -1,0 +1,40 @@
+{
+    "_id":"c-30",
+    "_parentId":"b-15",
+    "_type":"component",
+    "_component":"order",
+    "_classes":"",
+    "_layout":"right",
+    "title": "Title of the order component",
+    "body": "Do you know in what order the following alternatives should be placed? <br /><BR />Place the alternatives in the correct order.",
+    "_attempts": 1,
+    "buttons":{
+        "submit":"SUBMIT",
+        "reset":"RESET",
+        "showCorrectAnswer":"MODEL ANSWER",
+        "hideCorrectAnswer":"YOUR ANSWER"
+    },
+    "feedback": {
+        "correct": "This feedback will appear if you answered the question correctly.",
+        "incorrect": "This feedback will appear if you answered the question incorrectly.",
+        "partly": "This feedback will appear if you answered part of the question correctly."
+    },
+    "items": [
+        {
+            "prefix": "1:",
+            "answer": "Find API"
+        },
+        {
+            "prefix": "2:",
+            "answer": "LMSInitialize"
+        },
+        {
+            "prefix": "3:",
+            "answer": "LMSGet/Set"
+        },
+        {
+            "prefix": "4:",
+            "answer": "LMSFinish"
+        }
+    ]
+}
