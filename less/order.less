@@ -125,22 +125,37 @@
     .order-item-reorder {
         background: none;
         position: absolute;
-        right: (@icon-size * 2);
+        right: (@icon-size * 1.5);
         width: @icon-size * 2;
         height: @icon-size;
-        top: 50%;
+        top: 35%;
         margin-top: -(@icon-size/3);
         z-index: 0;
+        display: inline-block;
+    }
+    
+    .order-item-reorder-down {
+        background: none;
+        position: absolute;
+        right: (@icon-size * 0.5);
+        width: @icon-size * 2;
+        height: @icon-size;
+        top: 35%;
+        margin-top: -(@icon-size/3);
+        z-index: 0;
+        display: inline-block;
     }
     
     .order-up-icon {
-       // color: @icon-correct-color;
+       color: @icon-correct-color;
        position: relative;
+       display: inline-block;
     }
 
     .order-down-icon {
-       // color: @icon-incorrect-color;
+       color: @icon-incorrect-color;
        position: relative;
+       display: inline-block;
     }
 }
     

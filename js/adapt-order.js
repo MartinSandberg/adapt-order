@@ -125,7 +125,7 @@ define(function (require) {
             var upvalue = myItemData[inIndex+1];
             var downvalue = myItemData[inIndex];
             myItemData.splice(inIndex,1,upvalue); 
-            myItemData.splice(inIndex,1,downvalue); 
+            myItemData.splice(inIndex+1,1,downvalue); 
             this.postanswers();
         },
         
@@ -142,6 +142,16 @@ define(function (require) {
             
         },
         
+         hideArrows: function() {
+             var myTempData = this.model.get('items');
+             $itemParentFirst = this.$('.up-0');
+             $itemParentFirst.hide();
+             
+             $itemParentLast = this.$('.down-' + (myTempData.length - 1));
+             $itemParentLast.hide();
+             
+         },
+         
         postanswers: function() {
             for (var i = 0; i < myItemData.length; i++) {
                 myanswer = myItemData[i];
@@ -155,6 +165,7 @@ define(function (require) {
         postRender: function() {
             this.randomzeAlternatives();
             this.postanswers();
+            this.hideArrows();
             QuestionView.prototype.postRender.apply(this);
             this.setReadyStatus();
         },
@@ -189,8 +200,9 @@ define(function (require) {
         },
         
         onSubmitClicked: function(event) {
-            QuestionView.prototype.onSubmitClicked.apply(this, arguments);
             this.markQuestion();
+            QuestionView.prototype.onSubmitClicked.apply(this, arguments);
+            
             /*
             var correct = true;
              for (var i = 0; i < myItemData.length; i++) {

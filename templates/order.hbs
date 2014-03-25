@@ -27,12 +27,14 @@
                 <input type="text" placeholder="{{../placeholder}}" class="order-item-textbox" id="input-{{@index}} data-id="input-{{@index}}" data-index="{{@index}}" value="{{userAnswer}}" disabled="true">
             {{/if}}
             <div class="order-item-reorder">
-                <span class="order-icon order-up-icon icon icon-up" data-id="{{@index}}">
+                <span class="order-icon order-up-icon icon icon-up up-{{@index}}" data-id="{{@index}}">
                     <!--a href="moveAlternativeUp({{@index}});"--> 
                         <img src="assets/up.png">
                     <!--/a--> 
                 </span>
-                <span class="order-icon order-down-icon icon icon-down" data-id="{{@index}}">
+            </div>
+            <div class="order-item-reorder-down">
+                <span class="order-icon order-down-icon icon icon-down down-{{@index}}" data-id="{{@index}}">
                     <!--a href="moveAlternativeDown({{@index}});"-->
                         <img src="assets/down.png">
                     <!--/a--> 
