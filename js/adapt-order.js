@@ -152,6 +152,16 @@ define(function (require) {
              
          },
          
+         hideAllArrows: function() {
+             var myTempData = this.model.get('items');
+             for (var i = 0; i < myTempData.length; i++) {
+                $itemParentFirst = this.$('.up-' + i);
+                $itemParentFirst.hide();
+                $itemParentLast = this.$('.down-' + i);
+                $itemParentLast.hide();
+            }
+         },
+         
         postanswers: function() {
             for (var i = 0; i < myItemData.length; i++) {
                 myanswer = myItemData[i];
@@ -184,7 +194,11 @@ define(function (require) {
               var correctSelection = useranswer == corranswer;
               //  alert("correctSelection ("+correctSelection+") = item.answer ("+item.answer+") == myTempData[item.data('id')].answer ("+myTempData[item.data('id')].answer+")");
                 if(correctSelection) {
+                    item.correct = true;
                     this.model.set('_isAtLeastOneCorrectSelection', true);
+                } else {
+                    
+                    item.correct = false;
                 }
                 callback(correctSelection, item);
             }, this);
@@ -202,7 +216,7 @@ define(function (require) {
         onSubmitClicked: function(event) {
             this.markQuestion();
             QuestionView.prototype.onSubmitClicked.apply(this, arguments);
-            
+            this.hideAllArrows();
             /*
             var correct = true;
              for (var i = 0; i < myItemData.length; i++) {
